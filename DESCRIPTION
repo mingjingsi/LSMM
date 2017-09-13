@@ -1,0 +1,14 @@
+Package: LSMM
+Type: Package
+Title: LSMM(Latent Sparse Mixed Model)
+Version: 0.1.0
+Author: Jingsi Ming
+Maintainer: Jingsi Ming <jsming@life.hkbu.edu.hk>
+Description: This package provides functions for fitting LSMM, a statistical approach to integrating functional annotations with Genome-wide Association Studies
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+Imports: Rcpp (>= 0.12.8), RcppArmadillo
+Depends: R (>= 3.0.0), Rcpp
+LinkingTo: Rcpp, RcppArmadillo
+URL:https://github.com/mingjingsi/LSMM

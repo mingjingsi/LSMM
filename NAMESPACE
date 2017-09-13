@@ -1,0 +1,6 @@
+useDynLib(LSMM)
+
+import(Rcpp)
+
+export(LSMM, assoc.SNP, relev.Anno)
+
