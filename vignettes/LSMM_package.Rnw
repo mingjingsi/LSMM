@@ -22,7 +22,7 @@ pdfauthor={Jingsi Ming},
 pdftitle={LSMM Vignette}]
 {hyperref}
 
-\title{`\texttt{LSMM}' Package1 to integrating functional
+\title{`\texttt{LSMM}' Package to integrating functional
 annotations with genome-wide association studies}
 \author{Jingsi Ming$~^1$, Mingwei Dai$~^{1,2}$, Mingxuan Cai$~^1$, Jin Liu$~^3$, and Can Yang$~^4$\\
 $~^1$ Department of Mathematics, Hong Kong Baptist University, Hong Kong.\\
@@ -52,7 +52,7 @@ The package can be loaded with the command:
 options(prompt = "R> ")
 @
 
-<<LSMM-prelim>>=
+<<LSMM-prelim, warning=FALSE>>=
 library("LSMM")
 @
 
@@ -136,13 +136,7 @@ table(relev.Anno.LSMM)
 
 
 \begin{thebibliography}{99}
-Jingsi Ming, Mingwei Dai, Mingxuan Cai, Jin Liu, Can Yang,
-LSMM: A statistical approach to integrating functional annotations with genome-wide association studies. 2017. Under review.
-
-\bibitem{GPA} Chung D*, Yang C*, Li C, Gelernter J, and Zhao H (2013),
-``GPA: A statistical approach to prioritizing GWAS results
-by integrating pleiotropy information and annotation data.''
-To appear in \textit{PLoS Genetics}. (* Joint first authors)
+\bibitem{LSMM} Jingsi Ming, Mingwei Dai, Mingxuan Cai, Jin Liu, Can Yang. LSMM: A statistical approach to integrating functional annotations with genome-wide association studies. 2017. Under review.
 
 \end{thebibliography}
 
