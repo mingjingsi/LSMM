@@ -29,7 +29,7 @@ Method to control FDR. Possible values are "global" (global FDR control) and "lo
 List of binary values indicating relevant annotations for the phenotype, where one indicates that the annotation is relevant to the phenotype and zero otherwise
 }
 \author{
-Jingsi Ming
+Jingsi Ming and Can Yang
 }
 \note{
 %%  ~~further notes~~
