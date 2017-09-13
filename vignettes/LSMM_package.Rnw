@@ -22,7 +22,7 @@ pdfauthor={Jingsi Ming},
 pdftitle={LSMM Vignette}]
 {hyperref}
 
-\title{`\texttt{LSMM}' Package to integrating functional
+\title{`\texttt{LSMM}' Package1 to integrating functional
 annotations with genome-wide association studies}
 \author{Jingsi Ming$~^1$, Mingwei Dai$~^{1,2}$, Mingxuan Cai$~^1$, Jin Liu$~^3$, and Can Yang$~^4$\\
 $~^1$ Department of Mathematics, Hong Kong Baptist University, Hong Kong.\\
