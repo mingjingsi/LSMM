@@ -98,7 +98,7 @@ corresponding to this phenotype.
 %% ~put references to the literature/web site here ~
 }
 \author{
-Jingsi Ming and Can Yang
+Jingsi Ming
 }
 \seealso{
  \code{\link{assoc.SNP}}, \code{\link{relev.Anno}}

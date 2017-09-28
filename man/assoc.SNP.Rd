@@ -38,7 +38,7 @@ List of binary values indicating association of SNPs for the phenotype, where on
 }
 }
 \author{
-Jingsi Ming and Can Yang
+Jingsi Ming
 }
 \note{
 %%  ~~further notes~~

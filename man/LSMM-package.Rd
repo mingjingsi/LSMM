@@ -22,7 +22,7 @@ LazyLoad: \tab yes\cr
 This package contains three main function, \code{LSMM}, \code{assoc.SNP} and \code{relev.Anno} . \code{LSMM} fits LSMM, \code{assoc.SNP} makes statistical inference for risk SNPs and \code{relev.Anno} makes statistical inference for relevant tissue-specific functional annotations.
 }
 \author{
-Jingsi Ming and Can Yang
+Jingsi Ming
 
 Maintainer: Jingsi Ming <jsming@life.hkbu.edu.hk>
 }
