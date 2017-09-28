@@ -1,7 +1,7 @@
 LSMM
 ===
 
-LSMM (Latent Sparse Mixed Model), is an efficient statistical approach to integrating functional annotations with genome-wide association studies. 'LSMM' package provides model parameter estimation and statistical inference for risk SNPs and relevant annotations.
+LSMM (Latent Sparse Mixed Model), is an efficient statistical approach to integrating functional annotations with genome-wide association studies. 'LSMM' package provides model parameter estimation as well as statistical inference.
 
 Installation
 ===========
@@ -27,7 +27,7 @@ package?LSMM
 References
 ==========
 
-Jingsi Ming, Mingwei Dai, Mingxuan Cai, Jin Liu, Can Yang. LSMM: A statistical approach to integrating functional annotations with genome-wide association studies. 2017. Under review.
+Jingsi Ming, Mingwei Dai, Mingxuan Cai, Jin Liu and Can Yang. LSMM: A statistical approach to integrating functional annotations with genome-wide association studies. 2017. Under review.
 
 
 Development
