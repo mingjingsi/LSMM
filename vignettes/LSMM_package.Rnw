@@ -22,13 +22,16 @@ pdfauthor={Jingsi Ming},
 pdftitle={LSMM Vignette}]
 {hyperref}
 
-\title{`\texttt{LSMM}' Package to integrating functional
+\title{`\texttt{LSMM}' Package to integrate functional
 annotations with genome-wide association studies}
-\author{Jingsi Ming$~^1$, Mingwei Dai$~^{1,2}$, Mingxuan Cai$~^1$, Jin Liu$~^3$, and Can Yang$~^4$\\
+\author{Jingsi Ming$~^1$, Mingwei Dai$~^{2,5}$, Mingxuan Cai$~^1$, \\
+Xiang Wan$~^3$, Jin Liu$~^4$, and Can Yang$~^5$\\
+\\
 $~^1$ Department of Mathematics, Hong Kong Baptist University, Hong Kong.\\
 $~^2$ School of Mathematics and Statistics, Xi'an Jiaotong University, Xi'an, China.\\
-$~^3$ Centre of Quantitative Medicine, Duke-NUS Graduate Medical School, Singapore.\\
-$~^4$ Department of Mathematics, The Hong Kong University of Science and Technology,\\
+$~^3$ Department of Computer Science, Hong Kong Baptist University, Hong Kong.\\
+$~^4$ Centre of Quantitative Medicine, Duke-NUS Graduate Medical School, Singapore.\\
+$~^5$ Department of Mathematics, The Hong Kong University of Science and Technology,\\
 Hong Kong.\\
 }
 
@@ -44,7 +47,7 @@ Hong Kong.\\
 
 This vignette provides an introduction to the `\texttt{LSMM}' package.
 R package `\texttt{LSMM}' implements LSMM (Latent Sparse Mixed Model),
-an efficient statistical approach to integrating functional annotations with genome-wide association studies. It provides model parameter estimation and statistical inference for risk SNPs and relevant annotations.
+an efficient statistical approach to integrating functional annotations with genome-wide association studies. It provides model parameter estimation as well as statistical inference.
 
 The package can be loaded with the command:
 
@@ -52,19 +55,19 @@ The package can be loaded with the command:
 options(prompt = "R> ")
 @
 
-<<LSMM-prelim, warning=FALSE>>=
+<<LSMM-prelim>>=
 library("LSMM")
 @
 
 This vignette is organized as follows.
 Section \ref{fitting} discusses how to fit LSMM in various settings.
-Section \ref{association} explains command lines for statistical inference of risk SNPs and relevant annotations using LSMM.
+Section \ref{association} explains command lines for statistical inference for identification of risk SNPs and detection of relevant annotations using LSMM.
 
-Always feel free to contact Jingsi Ming at \texttt{jsming@life.hkbu.edu.hk} for any questions or suggestions regarding the `\texttt{LSMM}' package.
+Please feel free to contact Can Yang at \texttt{macyang@ust.hk} for any questions or suggestions regarding the `\texttt{LSMM}' package.
 
 \section{Workflow}\label{workflow}
 
-In this vignette, we use the simulated ExampleData in the package. We set the number of SNPs, fixed effects and random effects to be 100,000, 10 and 500 respectively. Users can find the $p$-value in the `\texttt{ExampleData\$Pvalue}', fixed effects in `\texttt{ExampleData\$Z}' and random effects in `\texttt{ExampleData\$A}'.
+In this vignette, we use the simulated ExampleData in the package. We set the number of SNPs, fixed effects and random effects to be $M=100,000$, $L=10$ and $K=500$ respectively. Users can find the $p$-value in the `\texttt{ExampleData\$Pvalue}', design matrix for fixed effects and random effects in `\texttt{ExampleData\$Z}' and `\texttt{ExampleData\$A}' respectively.
 
 <<LSMMExample-prelim>>=
 
@@ -76,7 +79,7 @@ length(Pvalue)
 dim(Z)
 dim(A)
 @
-The length of `\texttt{Pvalue}' is assumed to be the same as the number of rows of matrix provided to `\texttt{Z}' and `\texttt{A}'. When we analyze real data, we need to take the intersection of the SNPs in `\texttt{Pvalue}', `\texttt{Z}' and `\texttt{A}' and keep the SNPs in the same order.
+The length of `\texttt{Pvalue}' is assumed to be the same as the number of rows of matrix provided to `\texttt{Z}' and `\texttt{A}'. When we analyze real data, we need to ensure that the $j$-th ($j=1,...,M$) row of `\texttt{Pvalue}', `\texttt{Z}' and `\texttt{A}' corresponds to the same SNPs.
 
 \subsection{Fitting the LSMM}\label{fitting}
 
@@ -94,7 +97,7 @@ fit.LSMM.noZA <- LSMM(Pvalue)
 @
 Now, LSMM reduces to the Two Groups Model.
 
-When we also have related annotation data, this annotation data can be easily incorporated into LSMM by providing it in the second or the third argument of `\texttt{LSMM}' function. The second argument is regarded as fixed effect and the third argument is regarded as random effect.
+When we also have functional annotation data, this annotation data can be easily incorporated into LSMM by providing it in the second or the third argument of `\texttt{LSMM}' function. The second argument is regarded as fixed effect and the third argument is regarded as random effect.
 If we only consider fixed effects, then we can fit LSMM with the command:
 <<LSMM-Z-show,eval=FALSE>>=
 fit.LSMM.Z <- LSMM(Pvalue, Z = Z, A = NULL)
@@ -113,9 +116,9 @@ fit.LSMM.ZA <- LSMM(Pvalue, Z = Z, A = A)
 str(fit.LSMM.ZA)
 @
 
-\subsection{Statistical inference for risk SNPs and relevant annotations}\label{association}
+\subsection{Statistical inference for detection of risk SNPs and relevant tissue-specific annotations}\label{association}
 
-Now, based on the fitted LSMM, we can make statistical inference for risk SNPs:
+Now, based on the fitted LSMM, we can make statistical inference for identification of risk SNPs:
 <<LSMM-assoc.SNP>>=
 assoc.SNP.LSMM <- assoc.SNP(fit.LSMM.ZA, FDRset = 0.1, fdrControl="global")
 str(assoc.SNP.LSMM)
@@ -126,7 +129,7 @@ table(assoc.SNP.LSMM$gamma)
 `\texttt{assoc.SNP}' function returns list of binary values indicating association of SNPs for the phenotype under different stages, where one indicates that the SNP is associated with the phenotype and zero otherwise. `\texttt{assoc.SNP}' allows both local (`\texttt{fdrControl="local"}') and global FDR controls (`\texttt{fdrControl="global"}') and users can set the threshold using the argument `\texttt{FDRset}'. For ExampleData, Two Groups Model (stage1) detected 15277 SNPs, whereas LFM which uses fixed effects (stage2) and LSMM which integrates
 both fixed effects and random effect identified 15602 and 25059 SNPs respectively, under the global FDR control at 0.1 level.
 
-We can also make statistical inference for relevant annotations:
+We can also make statistical inference for detection of relevant annotations:
 <<LSMM-relev.Anno>>=
 relev.Anno.LSMM <- relev.Anno(fit.LSMM.ZA, FDRset = 0.1, fdrControl="local")
 str(relev.Anno.LSMM)
@@ -136,7 +139,11 @@ table(relev.Anno.LSMM)
 
 
 \begin{thebibliography}{99}
-\bibitem{LSMM} Jingsi Ming, Mingwei Dai, Mingxuan Cai, Jin Liu, Can Yang. LSMM: A statistical approach to integrating functional annotations with genome-wide association studies. 2017. Under review.
+Jingsi Ming, Mingwei Dai, Mingxuan Cai, Jin Liu and Can Yang. LSMM: A statistical approach to integrating functional annotations with genome-wide association studies. 2017. Under review.
+% \bibitem{GPA} Chung D*, Yang C*, Li C, Gelernter J, and Zhao H (2013),
+% ``GPA: A statistical approach to prioritizing GWAS results
+% by integrating pleiotropy information and annotation data.''
+% To appear in \textit{PLoS Genetics}. (* Joint first authors)
 
 \end{thebibliography}
 
