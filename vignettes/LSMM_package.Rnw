@@ -139,11 +139,8 @@ table(relev.Anno.LSMM)
 
 
 \begin{thebibliography}{99}
-Jingsi Ming, Mingwei Dai, Mingxuan Cai, Jin Liu and Can Yang. LSMM: A statistical approach to integrating functional annotations with genome-wide association studies. 2017. Under review.
-% \bibitem{GPA} Chung D*, Yang C*, Li C, Gelernter J, and Zhao H (2013),
-% ``GPA: A statistical approach to prioritizing GWAS results
-% by integrating pleiotropy information and annotation data.''
-% To appear in \textit{PLoS Genetics}. (* Joint first authors)
+Jingsi Ming, Mingwei Dai, Mingxuan Cai, Xiang Wan, Jin Liu and Can Yang. LSMM: A statistical approach to integrating functional annotations with genome-wide association studies. 2017. Under review.
+
 
 \end{thebibliography}
 
