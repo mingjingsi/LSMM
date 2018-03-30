@@ -27,7 +27,7 @@ package?LSMM
 References
 ==========
 
-Jingsi Ming, Mingwei Dai, Mingxuan Cai, Xiang Wan, Jin Liu, Can Yang; LSMM: A statistical approach to integrating functional annotations with genome-wide association studies, Bioinformatics, 2018, bty187
+Jingsi Ming, Mingwei Dai, Mingxuan Cai, Xiang Wan, Jin Liu, Can Yang; LSMM: A statistical approach to integrating functional annotations with genome-wide association studies, Bioinformatics, 2018, bty187, https://doi.org/10.1093/bioinformatics/bty187
 
 
 Reproducibility
