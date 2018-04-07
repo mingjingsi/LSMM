@@ -11,7 +11,7 @@ assoc.SNP <- function(fit, FDRset = 0.1, fdrControl){
       est$gamma[which(FDR <= FDRset)]  <- 1
     }
     if (fdrControl == "local"){
-      est$gamma[which((1-fit$pi1) <= FDR.set)] <- 1
+      est$gamma[which((1-fit$pi1) <= FDRset)] <- 1
     }
   }
   else if(length(fit) == 6){
@@ -28,7 +28,7 @@ assoc.SNP <- function(fit, FDRset = 0.1, fdrControl){
     }
     if (fdrControl == "local"){
       est$gamma.stage1[which((1-fit$pi1.stage1) <= FDRset)] <- 1
-      est$gamma[which((1-fit$pi1) <= FDR.set)]              <- 1
+      est$gamma[which((1-fit$pi1) <= FDRset)]              <- 1
     }
   }
   else {
@@ -49,7 +49,7 @@ assoc.SNP <- function(fit, FDRset = 0.1, fdrControl){
     if (fdrControl == "local"){
       est$gamma.stage1[which((1-fit$pi1.stage1) <= FDRset)] <- 1
       est$gamma.stage2[which((1-fit$pi1.stage2) <= FDRset)] <- 1
-      est$gamma[which((1-fit$pi1) <= FDR.set)]              <- 1
+      est$gamma[which((1-fit$pi1) <= FDRset)]              <- 1
     }
   }
 

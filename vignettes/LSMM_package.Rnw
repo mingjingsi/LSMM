@@ -29,8 +29,8 @@ Xiang Wan$~^3$, Jin Liu$~^4$, and Can Yang$~^5$\\
 \\
 $~^1$ Department of Mathematics, Hong Kong Baptist University, Hong Kong.\\
 $~^2$ School of Mathematics and Statistics, Xi'an Jiaotong University, Xi'an, China.\\
-$~^3$ Department of Computer Science, Hong Kong Baptist University, Hong Kong.\\
-$~^4$ Centre of Quantitative Medicine, Duke-NUS Graduate Medical School, Singapore.\\
+$~^3$ Shenzhen Research Institute of Big Data, Shenzhen, China.\\
+$~^4$ Centre for Quantitative Medicine, Duke-NUS Medical School, Singapore.\\
 $~^5$ Department of Mathematics, The Hong Kong University of Science and Technology,\\
 Hong Kong.\\
 }
@@ -139,11 +139,8 @@ table(relev.Anno.LSMM)
 
 
 \begin{thebibliography}{99}
-Jingsi Ming, Mingwei Dai, Mingxuan Cai, Xiang Wan, Jin Liu and Can Yang. LSMM: A statistical approach to integrating functional annotations with genome-wide association studies. 2017. Under review.
-
+Jingsi Ming, Mingwei Dai, Mingxuan Cai, Xiang Wan, Jin Liu, Can Yang; LSMM: A statistical approach to integrating functional annotations with genome-wide association studies, Bioinformatics, 2018, bty187, https://doi.org/10.1093/bioinformatics/bty187
 
 \end{thebibliography}
 
 \end{document}
-
-
